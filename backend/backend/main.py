@@ -19,7 +19,7 @@ raw_origins = os.getenv("CORS_ORIGINS", "*").strip()
 origins = [x.strip() for x in raw_origins.split(",") if x.strip()] or ["*"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080", "http://127.0.0.1:8080"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
